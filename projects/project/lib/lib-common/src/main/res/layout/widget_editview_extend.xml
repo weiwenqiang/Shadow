@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lyt_root_extend"
+    android:layout_width="match_parent"
+    android:layout_height="35dp"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:id="@+id/img_extend_left"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:scaleType="center"
+        android:src="@mipmap/ic_login_phone_normal" />
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_weight="1">
+
+        <com.zzz.myemergencyclientnew.widget.combine.ClearEditText
+            android:id="@+id/edt_edit"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginBottom="5dp"
+            android:background="@null"
+            android:singleLine="true"
+            android:imeOptions="flagNoExtractUi"
+            android:ellipsize="start"
+            android:drawableBottom="@color/gray2"
+            android:hint=""
+            android:text=""
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textSize="@dimen/text_normal"/>
+
+    </RelativeLayout>
+
+
+    <ImageView
+        android:id="@+id/img_extend_required"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="@dimen/spacing_smallest"
+        android:layout_marginRight="@dimen/spacing_smallest"
+        android:scaleType="center"
+        android:src="@mipmap/ic_action_required"
+        android:visibility="invisible" />
+    <ImageView
+        android:id="@+id/img_extend_right"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerInParent="true"
+        android:scaleType="center"
+        android:src="@mipmap/ic_login_correct_normal" />
+
+    <Button
+        android:id="@+id/btn_button"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_main_pressed"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="5dp"
+        android:gravity="center"
+        android:enabled="true"
+        android:paddingRight="5dp"
+        android:text="选择地址"
+        android:textColor="@color/text_color_pressed"
+        android:textSize="@dimen/text_small" />
+
+</LinearLayout>

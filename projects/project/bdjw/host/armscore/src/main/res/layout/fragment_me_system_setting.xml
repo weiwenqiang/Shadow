@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:stv="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="mView"
+            type="com.zzz.myemergencyclientnew.fragment.me.SystemSettingFragment" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_About_Us"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{mView::AboutUs}"
+            stv:sDividerLineType="bottom"
+            stv:sLeftTextString="关于我们"
+            stv:sRightIconRes="@mipmap/img_gray_right" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_version_number"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            stv:sDividerLineType="bottom"
+            stv:sLeftTextString="版本号"
+            stv:sRightIconRes="@mipmap/img_gray_right" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_Log_Out"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
+            android:onClick="@{mView::logout}"
+            stv:sCenterTextColor="@color/white"
+            stv:sCenterTextString="退出登陆"
+            stv:sShapeCornersRadius="10dp"
+            stv:sShapeSelectorNormalColor="@color/red"
+            stv:sShapeSelectorPressedColor="@color/graya"
+            stv:sUseShape="true" />
+    </LinearLayout>
+</layout>

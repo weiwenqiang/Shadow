@@ -1,0 +1,11 @@
+{"appid":"123",
+"apkType":"plugin",
+"apkTitle":"区划领导",
+"versionCode":200,
+"versionName":"2.0.1",
+"apiType":"pro",
+"apiVersion":"v3.1",
+"author":"魏文强",
+"pack":"魏文强",
+"packTime":"2020/03/23",
+"purpose":"领导功能添加审批功能，插件升级"}

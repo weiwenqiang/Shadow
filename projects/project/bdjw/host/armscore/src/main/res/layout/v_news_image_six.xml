@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="5dp"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="3dp"
+    app:cardMaxElevation="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lyt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/include_news_user"
+            layout="@layout/include_news_user" />
+
+        <TextView
+            android:id="@+id/txt_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintTop_toBottomOf="@+id/include_news_user" />
+
+        <com.zzz.myemergencyclientnew.widget.custom.SquareImageView
+            android:id="@+id/img_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="@dimen/v_image_space"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@+id/img_two"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_content" />
+
+        <com.zzz.myemergencyclientnew.widget.custom.SquareImageView
+            android:id="@+id/img_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/v_image_space"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="@dimen/v_image_space"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@+id/img_three"
+            app:layout_constraintStart_toEndOf="@+id/img_one"
+            app:layout_constraintTop_toBottomOf="@+id/txt_content" />
+
+        <com.zzz.myemergencyclientnew.widget.custom.SquareImageView
+            android:id="@+id/img_three"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/v_image_space"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_two"
+            app:layout_constraintTop_toBottomOf="@+id/txt_content" />
+
+        <com.zzz.myemergencyclientnew.widget.custom.SquareImageView
+            android:id="@+id/img_four"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="@dimen/v_image_vertical"
+            android:layout_marginRight="@dimen/v_image_space"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@+id/img_five"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_one" />
+
+        <com.zzz.myemergencyclientnew.widget.custom.SquareImageView
+            android:id="@+id/img_five"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/v_image_space"
+            android:layout_marginTop="@dimen/v_image_vertical"
+            android:layout_marginRight="@dimen/v_image_space"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toStartOf="@+id/img_six"
+            app:layout_constraintStart_toEndOf="@+id/img_four"
+            app:layout_constraintTop_toBottomOf="@+id/img_one" />
+
+        <com.zzz.myemergencyclientnew.widget.custom.SquareImageView
+            android:id="@+id/img_six"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/v_image_space"
+            android:layout_marginTop="@dimen/v_image_vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_five"
+            app:layout_constraintTop_toBottomOf="@+id/img_one" />
+
+        <include
+            layout="@layout/include_news_comm"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/img_six" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

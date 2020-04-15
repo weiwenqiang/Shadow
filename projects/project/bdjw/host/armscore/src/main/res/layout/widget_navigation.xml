@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/lyt_navigation"
+    android:layout_width="match_parent"
+    android:layout_height="55dp"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/bg_bottom"
+    android:orientation="horizontal">
+
+    <com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView
+        android:id="@+id/tab_one"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:type="1"></com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView>
+
+    <com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView
+        android:id="@+id/tab_two"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:type="2"></com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView>
+
+    <com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView
+        android:id="@+id/tab_three"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:type="3"></com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView>
+
+    <com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView
+        android:id="@+id/tab_four"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:type="4"></com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView>
+
+    <com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView
+        android:id="@+id/tab_five"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:clickable="true"
+        app:type="5"></com.zzz.myemergencyclientnew.widget.custom.navigation.TabIndicatorView>
+
+</LinearLayout>

@@ -1,0 +1,9 @@
+[
+  {
+    "type": "container-oneColumn",
+    "load": "com.tmall.request.load.more",
+    "loadType": 1,
+    "items": [
+    ]
+  }
+]

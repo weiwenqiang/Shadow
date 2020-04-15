@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Tencent is pleased to support the open source community by making Tencent Shadow available.
+  ~ Copyright (C) 2019 THL A29 Limited, a Tencent company.  All rights reserved.
+  ~
+  ~ Licensed under the BSD 3-Clause License (the "License"); you may not use
+  ~ this file except in compliance with the License. You may obtain a copy of
+  ~ the License at
+  ~
+  ~     https://opensource.org/licenses/BSD-3-Clause
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  ~
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btn_get_fragment_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_get_fragment_class"
+                android:text="获取Fragment实例" />
+
+
+            <Button
+                android:id="@+id/btn_help_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_help_feedback"
+                android:text="加载帮助反馈并打开" />
+
+            <Button
+                android:id="@+id/btn_publish_notype"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_publish_notype"
+                android:text="加载无类型文章并打开" />
+
+            <Button
+                android:id="@+id/btn_publish_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_publish_type"
+                android:text="加载有类型文章并打开" />
+
+            <Button
+                android:id="@+id/btn_publish_sos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_publish_sos"
+                android:text="加载求救并打开" />
+
+            <Button
+                android:id="@+id/btn_intell_report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_intell_report"
+                android:text="加载信息报告并打开" />
+
+
+            <EditText
+                android:id="@+id/edt_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="http://192.168.81.137:9999" />
+
+            <Button
+                android:id="@+id/btn_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_ip"
+                android:text="切换IP" />
+
+            <EditText
+                android:id="@+id/edt_main_api1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="/getFunList?code=HOST" />
+
+            <Button
+                android:id="@+id/btn_fun1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_fun1"
+                android:text="切换主功能接口1" />
+
+            <EditText
+                android:id="@+id/edt_main_api2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="/app/function/allFunctionList" />
+
+            <Button
+                android:id="@+id/btn_fun2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_fun2"
+                android:text="切换主功能接口2" />
+
+            <EditText
+                android:id="@+id/edt_old_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="http://192.168.81.137:9900" />
+
+            <Button
+                android:id="@+id/btn_old_ip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_old_ip"
+                android:text="切换旧原接口IP" />
+
+            <Button
+                android:id="@+id/btn_host"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_host"
+                android:text="启动宿主" />
+
+            <Button
+                android:id="@+id/btn_init_plugin_manage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_init_plugin_manage"
+                android:text="初始化插件管理器" />
+
+            <Button
+                android:id="@+id/btn_plugin_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_plugin_list"
+                android:text="插件列表" />
+
+            <Button
+                android:id="@+id/startButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="startPlugin"
+                android:text="@string/start_plugin" />
+
+            <Button
+                android:id="@+id/btn_database"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_database"
+                android:text="清空数据库" />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_login"
+                android:text="打开登陆" />
+
+            <Button
+                android:id="@+id/btn_load_push_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_load_push_msg"
+                android:text="加载推送消息apk" />
+
+            <Button
+                android:id="@+id/btn_push_msg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_push_msg"
+                android:text="推送消息插件" />
+
+
+            <Button
+                android:id="@+id/btn_load_scan_qr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_load_scan_qr"
+                android:text="加载扫描二维码" />
+
+            <Button
+                android:id="@+id/btn_scan_qr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_scan_qr"
+                android:text="扫描二维码" />
+
+
+            <Button
+                android:id="@+id/btn_out_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_out_log"
+                android:text="退出登录" />
+
+            <Button
+                android:id="@+id/btn_guidance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_guidance"
+                android:text="清空引导记录" />
+
+            <Button
+                android:id="@+id/btn_open_three_apk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_open_three_apk"
+                android:text="打开三方包" />
+
+            <Button
+                android:id="@+id/btn_download_service"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_download_service"
+                android:text="启动下载服务" />
+            <Button
+                android:id="@+id/btn_download_service2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="btn_download_service2"
+                android:text="启动下载服务2" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

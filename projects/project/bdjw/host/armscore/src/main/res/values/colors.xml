@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#31c0ff</color>
+    <color name="colorPrimaryDark">#019eff</color>
+    <color name="colorAccent">#2365f7</color>
+
+    <!-- 主色调 -->
+    <color name="main_color">#2365f7</color>
+<!--    <color name="main_thin_color">#882365f7</color>-->
+    <!-- 纯色 -->
+    <color name="white">#ffffffff</color>
+    <color name="black">#ff000000</color>
+    <!-- 自定义颜色 -->
+    <color name="blue">#ff00aaff</color>
+    <color name="purple">#ff34253A</color>
+    <color name="yellow">#ffF5A623</color>
+    <color name="green">#ff74c455</color>
+    <color name="red">#E94339</color>
+    <color name="orange">#ff9922</color>
+
+    <array name="rainbowColors">
+        <item>#c41411</item>
+        <item>#ad1457</item>
+        <item>#6a1b9a</item>
+        <item>#4527a0</item>
+        <item>#283593</item>
+        <item>#3b50ce</item>
+        <item>#0277bd</item>
+        <item>#00838f</item>
+        <item>#00695c</item>
+        <item>#056f00</item>
+        <item>#558b2f</item>
+        <item>#9e9d24</item>
+        <item>#f9a825</item>
+        <item>#ff8f00</item>
+        <item>#ef6c00</item>
+        <item>#d84315</item>
+    </array>
+    <!--灰色-->
+    <color name="gray2">#ff222222</color>
+    <color name="gray4">#ff444444</color>
+    <color name="gray6">#ff666666</color>
+    <color name="gray8">#ff888888</color>
+    <color name="graya">#ffaaaaaa</color>
+    <color name="grayc">#ffcccccc</color>
+    <color name="graye">#ffeeeeee</color>
+    <!--字体颜色-->
+    <color name="text_black">#000000</color>
+    <color name="text_gray">#404040</color>
+<!--    <color name="text_dark">#404040</color>-->
+    <color name="text_blue">#2365f7</color>
+
+    <color name="item_border_color">#666666</color>
+    <color name="item_default_color">#22EEEEEE</color>
+    <color name="item_pressed_color">#CCCCCC</color>
+    <color name="item_activated_color">#77CEEE</color>
+
+    <!-- 主按钮样式颜色 -->
+    <color name="button_normal">#2365f7</color>
+    <color name="button_pressed">#ffffff</color>
+    <color name="button_enabled">#aeaeae</color>
+
+    <!--详情页小字颜色-->
+    <color name="sLeftTextColor">#666666</color>
+</resources>

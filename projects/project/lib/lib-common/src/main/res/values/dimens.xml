@@ -1,0 +1,94 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!--<dimen name="activity_horizontal_margin">16dp</dimen>-->
+    <!--<dimen name="activity_vertical_margin">16dp</dimen>-->
+
+    <!-- 字号 -->
+    <dimen name="text_biggestst">40sp</dimen>
+    <dimen name="text_biggest">30sp</dimen>
+    <dimen name="text_bigger">20sp</dimen>
+    <dimen name="text_big">18sp</dimen>
+    <dimen name="text_normal">16sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="text_smaller">12sp</dimen>
+    <dimen name="text_smallest">10sp</dimen>
+    <!-- 圆角大小 -->
+    <dimen name="radius_biggest">24dp</dimen>
+    <dimen name="radius_bigger">8dp</dimen>
+    <dimen name="radius_big">4dp</dimen>
+    <dimen name="radius">3dp</dimen>
+    <dimen name="radius_small">2dp</dimen>
+    <!--边距-->
+    <dimen name="spacing_biggest">28dp</dimen>
+    <dimen name="spacing_bigger">24dp</dimen>
+    <dimen name="spacing_big">20dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
+    <dimen name="spacing_normal_negative">-16dp</dimen>
+    <dimen name="spacing_small">12dp</dimen>
+    <dimen name="spacing_smaller">8dp</dimen>
+    <dimen name="spacing_smallest">4dp</dimen>
+    <dimen name="length_biggest">48dp</dimen>
+    <dimen name="length_bigger">40dp</dimen>
+    <dimen name="length_big">32dp</dimen>
+    <dimen name="length_normal">24dp</dimen>
+    <dimen name="length_small">16dp</dimen>
+    <dimen name="length_smaller">8dp</dimen>
+    <!--MagicIndicator高度-->
+    <dimen name="common_navigator_height">30dp</dimen>
+
+    <!--全局大按钮左右边距-->
+    <dimen name="main_m_l_r">25dp</dimen>
+    <!--注册页面控件间距-->
+    <dimen name="login_m_t">15dp</dimen>
+    <!-- 个人中心条目大top -->
+    <dimen name="personal_item_big_t">20dp</dimen>
+    <!-- 个人中心条目小top -->
+    <dimen name="personal_item_small_t">10dp</dimen>
+
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="standard_padding">8dip</dimen>
+    <dimen name="half_padding">4dip</dimen>
+
+    <dimen name="material_drawer_vertical_padding">16dp</dimen>
+    <dimen name="material_drawer_item_primary">48dp</dimen>
+    <!--详情大字-->
+    <dimen name="details_text_normal">16sp</dimen>
+    <!--详情页小字-->
+    <dimen name="details_text_smaller">12sp</dimen>
+    <!--详情页小字-->
+    <dimen name="details_sLeftViewWidth">80dp</dimen>
+    <!--详情页小字-->
+    <dimen name="sLeftViewWidth_50">50dp</dimen>
+    <!--详情页小字-->
+    <dimen name="details_paddingLeft">10dp</dimen>
+
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+    <dimen name="dp_120">120dp</dimen>
+    <dimen name="dp_150">150dp</dimen>
+
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+
+    <dimen name="channelHeight">40dp</dimen>
+    <dimen name="channelPadding">10dp</dimen>
+    <dimen name="channelHorizontalSpacing">10dp</dimen>
+    <dimen name="channelVerticalSpacing">5dp</dimen>
+    <dimen name="channelTextSize">14sp</dimen>
+    <dimen name="platesTitleHeight">56dp</dimen>
+    <dimen name="platesTitleLeftRightPadding">3dp</dimen>
+    <dimen name="subTitleTextSize">10sp</dimen>
+
+    <dimen name="item_dish_circle_size">25dp</dimen>
+<!--多图片间隔-->
+    <dimen name="v_image_space">2dp</dimen>
+    <dimen name="v_image_vertical">4dp</dimen>
+
+</resources>

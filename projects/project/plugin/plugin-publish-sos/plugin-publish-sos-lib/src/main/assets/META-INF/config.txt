@@ -1,0 +1,25 @@
+{
+    "apk": {
+        "apiType": "pro",
+        "apiVersion": "v3.1",
+        "apkTitle": "求救",
+        "apkType": "plugin",
+        "appid": "30001",
+        "author": "魏文强",
+        "pack": "魏文强",
+        "packTime": "2020/03/23",
+        "purpose": "求救",
+        "versionCode": 200,
+        "versionName": "2.0.1",
+        "plugCode": "PLUGIN_PUBLISH_SOS",
+        "enter":"com.zzz.myemergencyclientnew.PublishTypeArticleActivity",
+        "receiver":"com.zzz.myemergencyclientnew.MyReceiver",
+        "receiverAction":"com.action",
+                                             "apkVersionName":"2.0.1",
+                                             "apkVersionCode":2,
+                                             "apkFileName":"plugin-publish-sos-debug.apk",
+                                             "filePath":"/files"
+    },
+    "feature": [
+                   ]
+}

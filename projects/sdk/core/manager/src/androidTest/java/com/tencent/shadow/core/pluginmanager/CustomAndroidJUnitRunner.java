@@ -16,7 +16,7 @@
  *
  */
 
-package com.tencent.shadow.core.manager;
+package com.tencent.shadow.core.pluginmanager;
 
 import android.os.Bundle;
 import android.support.test.runner.AndroidJUnitRunner;

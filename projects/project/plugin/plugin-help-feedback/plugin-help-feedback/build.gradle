@@ -1,0 +1,140 @@
+apply from: "../plugin-help-feedback-app/build.gradle"
+
+android {
+    defaultConfig {
+        applicationId project.TEST_HOST_APP_APPLICATION_ID
+    }
+    sourceSets {
+        debug {
+//            assets.srcDir('build/generated/assets/test-plugin-general-cases/debug/')
+//            assets.srcDir('build/generated/assets/plugin-push-msg/debug/')
+        }
+        release {
+//            assets.srcDir('build/generated/assets/test-plugin-general-cases/release/')
+//            assets.srcDir('build/generated/assets/plugin-push-msg/release/')
+        }
+    }
+    //--------------------------------------------------------
+    packagingOptions {
+//        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    lintOptions {
+        quiet true
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'GoogleAppIndexingWarning'
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+        encoding "UTF-8"
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    packagingOptions {
+        exclude 'META-INF/library-core_release.kotlin_module'
+        exclude 'META-INF/library_release.kotlin_module'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/rxjava.properties'
+    }
+    dexOptions {
+        preDexLibraries = false
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+buildscript {
+    repositories {
+        google()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.tencent.shadow.core:runtime-debug'
+        classpath 'com.tencent.shadow.core:activity-container-debug'
+        classpath 'com.tencent.shadow.core:gradle-plugin'
+        classpath 'org.javassist:javassist:3.22.0-GA'
+
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.61"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files+
+        classpath "com.alibaba:arouter-register:1.0.2"
+    }
+}
+
+apply plugin: 'com.tencent.shadow.plugin'
+
+
+shadow {
+    transform {
+//        useHostContext = ['abc']
+    }
+
+    packagePlugin {
+        pluginTypes {
+            debug {
+//                loaderApkConfig = new Tuple2('test-dynamic-loader-debug.apk', ':test-dynamic-loader:assembleDebug')
+//                runtimeApkConfig = new Tuple2('test-dynamic-runtime-debug.apk', ':test-dynamic-runtime:assembleDebug')
+                pluginApks {
+                    pluginApk1 {
+                        businessName = 'plugin-help-feedback'
+                        partKey = 'plugin-help-feedback'
+                        buildTask = ':plugin-help-feedback:assembleDebug'
+                        apkName = 'plugin-help-feedback-debug.apk'
+                        apkPath = 'projects/project/plugin/plugin-help-feedback/plugin-help-feedback/build/outputs/apk/debug/plugin-help-feedback-debug.apk'
+                        hostWhiteList = ["androidx.test.espresso",//这个包添加是为了general-cases插件中可以访问测试框架的类
+                                         "com.tencent.shadow.test.lib.plugin_use_host_code_lib.interfaces"]//测试插件访问宿主白名单类
+                    }
+                }
+            }
+
+            release {
+//                loaderApkConfig = new Tuple2('test-dynamic-loader-release.apk', ':test-dynamic-loader:assembleRelease')
+//                runtimeApkConfig = new Tuple2('test-dynamic-runtime-release.apk', ':test-dynamic-runtime:assembleRelease')
+                pluginApks {
+//                    pluginApk1 {
+//                        businessName = 'test-plugin-general-cases'
+//                        partKey = 'test-plugin-general-cases'
+//                        buildTask = ':test-plugin-general-cases:assembleRelease'
+//                        apkName = 'test-plugin-general-cases-release.apk'
+//                        apkPath = 'projects/test/plugin/general-cases/test-plugin-general-cases/build/outputs/apk/release/test-plugin-general-cases-release.apk'
+//                        hostWhiteList = ["androidx.test.espresso",//这个包添加是为了general-cases插件中可以访问测试框架的类
+//                                         "com.tencent.shadow.test.lib.plugin_use_host_code_lib.interfaces"]//测试插件访问宿主白名单类
+//                    }
+                    pluginApk1 {
+                        businessName = 'plugin-help-feedback'
+                        partKey = 'plugin-help-feedback'
+                        buildTask = ':plugin-help-feedback:assembleRelease'
+                        apkName = 'plugin-help-feedback-release.apk'
+                        apkPath = 'projects/project/plugin/plugin-help-feedback/plugin-help-feedback/build/outputs/apk/debug/plugin-help-feedback-release.apk'
+                        hostWhiteList = ["androidx.test.espresso",//这个包添加是为了general-cases插件中可以访问测试框架的类
+                                         "com.tencent.shadow.test.lib.plugin_use_host_code_lib.interfaces"]//测试插件访问宿主白名单类
+                    }
+                }
+            }
+        }
+
+//        loaderApkProjectPath = 'projects/test/dynamic/plugin/test-dynamic-loader'
+//        runtimeApkProjectPath = 'projects/test/dynamic/plugin/test-dynamic-runtime'
+
+        version = 4
+        compactVersion = [1, 2, 3]
+        uuidNickName = "1.1.5"
+    }
+}

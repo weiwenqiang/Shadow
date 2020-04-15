@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <EditText xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/edt_name"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/dialogui_shape_et_bg"
+        android:cursorVisible="true"
+        android:gravity="center"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/text_input_44"
+        android:textColorHint="@color/text_gray_light"
+        android:textCursorDrawable="@drawable/dialogui_shape_et_cursor"
+        android:textSize="14sp" />
+
+
+    <EditText
+        android:id="@+id/edt_money"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_weight="1"
+        android:background="@drawable/dialogui_shape_et_bg"
+        android:cursorVisible="true"
+        android:gravity="center"
+        android:inputType="numberDecimal"
+        android:maxLength="10"
+        android:maxLines="1"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/text_input_44"
+        android:textColorHint="@color/text_gray_light"
+        android:textCursorDrawable="@drawable/dialogui_shape_et_cursor"
+        android:textSize="14sp" />
+
+</LinearLayout>

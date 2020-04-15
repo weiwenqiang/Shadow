@@ -1,0 +1,291 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+apply plugin: 'com.alibaba.arouter'
+
+android {
+//    compileSdkVersion project.COMPILE_SDK_VERSION
+//    buildToolsVersion project.BUILD_TOOLS_VERSION
+    compileSdkVersion "android-R"
+    buildToolsVersion "30-rc1"
+    defaultConfig {
+        applicationId project.TEST_HOST_APP_APPLICATION_ID
+        minSdkVersion project.MIN_SDK_VERSION
+        targetSdkVersion project.TARGET_SDK_VERSION
+        versionCode project.VERSION_CODE
+        versionName project.VERSION_NAME
+//        testInstrumentationRunner "com.zzz.myemergencyclientnew.CustomAndroidJUnitRunner"
+        ndk {
+            abiFilters "armeabi-v7a"
+        }
+        javaCompileOptions {
+            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//                arguments = [moduleName: project.getName()]
+                //注释器
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        release {
+            minifyEnabled false
+            shrinkResources false
+            zipAlignEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.create("release")
+            signingConfig.initWith(buildTypes.debug.signingConfig)
+        }
+    }
+
+//    signingConfigs {
+//        release {
+//            storeFile file("hzntocc.jks")
+//            storePassword 'hzntocc'
+//            keyAlias 'hzntocc'
+//            keyPassword 'hzntocc'
+//        }
+//        debug {
+//            storeFile file("debug.jks")
+//            storePassword 'android'
+//            keyAlias 'androiddebugkey'
+//            keyPassword 'android'
+//        }
+//
+//    }
+//    sourceSets {
+//        main {
+////            manifest.srcFile 'AndroidManifest.xml'
+////            java.srcDirs = ['src']
+////            resources.srcDirs = ['src']
+////            aidl.srcDirs = ['src']
+////            renderscript.srcDirs = ['src']
+////            res.srcDirs = ['res']
+////            assets.srcDirs = ['assets']
+//            jniLibs.srcDirs = ['libs']
+//        }
+//        main {
+//            java {
+//                srcDir 'src/java' // 指定源码目录
+//            }
+//            resources {
+//                srcDir 'src/resources' //资源目录
+//            }
+//        }
+//    }
+
+    sourceSets {
+        debug {
+//            assets.srcDir('build/generated/assets/test-plugin-general-cases/debug/')
+//            assets.srcDir('build/generated/assets/plugin-push-msg/debug/')
+        }
+        release {
+//            assets.srcDir('build/generated/assets/test-plugin-general-cases/release/')
+//            assets.srcDir('build/generated/assets/plugin-push-msg/release/')
+        }
+    }
+    //--------------------------------------------------------
+    packagingOptions {
+//        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    lintOptions {
+        quiet true
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'GoogleAppIndexingWarning'
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+        encoding "UTF-8"
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    packagingOptions {
+        exclude 'META-INF/library-core_release.kotlin_module'
+        exclude 'META-INF/library_release.kotlin_module'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/rxjava.properties'
+    }
+    dexOptions {
+        preDexLibraries = false
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+//        includeCompileClasspath = true
+    }
+//    generateStubs = true
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+//    testImplementation 'junit:junit:4.12'
+    implementation 'commons-io:commons-io:2.5'//example复制apk用的.
+    implementation 'org.slf4j:slf4j-api:1.7.25'
+
+    implementation 'com.tencent.shadow.core:common'
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.70"
+    implementation 'com.tencent.shadow.core:loader'
+    implementation 'com.tencent.shadow.core:activity-container'
+    runtimeOnly "com.tencent.shadow.core:system-class-stub"
+//    implementation project(':custom-view')
+
+//    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+//    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+//    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    //通用库
+    api project(':lib-common')
+    //通用库
+    api project(':constant')
+    //通用库
+    api project(':lib-toast')
+//    //简易对话框
+//    api project(':lib-baidu-map')
+
+//-------------------------------------- 以下为自加 ------------------------------------------------
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //官方
+    implementation 'androidx.cardview:cardview:1.0.0'
+//    implementation 'com.android.support:appcompat-v7:29.0.0'
+//    implementation 'com.android.support:support-v4:29.0.0'
+//    implementation 'com.android.support:design:29.0.0'
+//    implementation "com.android.support:percent:29.0.0"
+//    implementation "com.android.support:support-vector-drawable:29.0.0"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+    //web
+    implementation 'com.just.agentweb:agentweb:4.0.2'
+    implementation 'com.just.agentweb:download:4.0.2'
+    implementation 'com.just.agentweb:filechooser:4.0.2'
+    //prdownloader下载
+    implementation 'com.mindorks.android:prdownloader:0.6.0'
+    // RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.6"
+    //json解析
+    implementation 'com.alibaba:fastjson:1.2.62'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //网络请求
+    implementation 'com.lzy.net:okgo:3.0.4'
+    //事件总线
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    //路由
+    implementation 'com.alibaba:arouter-api:1.4.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.0'
+//    kapt 'com.alibaba:arouter-annotation:1.0.6'
+    kapt 'com.alibaba:arouter-compiler:1.2.0'
+    //滑屏引导
+    implementation 'com.github.AppIntro:AppIntro:5.1.0'
+    //baseAdapter
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.46'
+    //组合文本
+    implementation 'com.github.lygttpod:SuperTextView:2.4.2'
+    //百度地图
+//    compileOnly files('libs/BaiduLBS_Android.jar')
+    //vlayout & tangram
+//    implementation 'com.alibaba.android:tangram:2.0.5@aar'
+    implementation 'com.alibaba.android:tangram:3.4.1@aar'
+    implementation('com.alibaba.android:vlayout:1.2.31@aar') {
+        transitive = true
+    }
+    implementation('com.alibaba.android:virtualview:1.4.6@aar') {
+        transitive = true
+    }
+    implementation('com.alibaba.android:ultraviewpager:1.0.7.8@aar') {
+        transitive = true
+    }
+    //Picasso 异步加载图片
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    //图片处理
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+    //广告轮播
+    implementation 'com.youth.banner:banner:1.4.10'
+    //播放视频
+    implementation('com.shuyu:GSYVideoPlayer:7.1.1') {
+        exclude group: 'com.danikula', module: 'videocache'
+    }
+    //material-dialogs
+    implementation 'com.afollestad.material-dialogs:core:3.1.1'
+    implementation 'com.afollestad.material-dialogs:input:3.1.1'
+//    implementation 'com.afollestad.material-dialogs:files:3.1.1'
+//    implementation 'com.afollestad.material-dialogs:color:3.1.1'
+    implementation 'com.afollestad.material-dialogs:datetime:3.1.1'
+//    implementation 'com.afollestad.material-dialogs:bottomsheets:3.1.1'
+//    implementation 'com.afollestad.material-dialogs:lifecycle:3.1.1'
+    //数据库线程依赖
+    implementation "org.jetbrains.anko:anko-commons:0.10.4"
+    //滑动页面
+    implementation 'com.github.hackware1993:MagicIndicator:1.5.0'
+}
+
+realm {
+    kotlinExtensionsEnabled = true
+}
+//def createCopyTask(projectName, buildType, name, apkName) {
+//    def split = (projectName as String).split(':')
+//    def moduleName = split[split.length - 1]
+//    def outputFile = file("${getBuildDir()}/generated/assets/${name}/${buildType}/${apkName}")
+//    outputFile.getParentFile().mkdirs()
+//    def inputFile = file("${project("${projectName}").getBuildDir()}/outputs/apk/${buildType}/${moduleName}-${buildType}.apk")
+//    return tasks.create("copy${buildType.capitalize()}${name.capitalize()}Task", Copy) {
+//        group = 'build'
+//        description = "复制${name}到assets中."
+//        from(inputFile.getParent()) {
+//            include(inputFile.name)
+//            rename { outputFile.name }
+//        }
+//        into(outputFile.getParent())
+//
+//    }.dependsOn("${projectName}:assemble${buildType.capitalize()}")
+//}
+//
+//tasks.whenTaskAdded { task ->
+//    if (task.name == "generateDebugAssets") {
+////        task.dependsOn createCopyTask(':plugin-push-msg', 'debug', 'plugin-push-msg', 'plugin.apk')
+//        task.dependsOn createCopyTask(':test-plugin-general-cases', 'debug', 'test-plugin-general-cases', 'plugin.apk')
+//    }
+//    if (task.name == "generateReleaseAssets") {
+////        task.dependsOn createCopyTask(':plugin-push-msg', 'release', 'plugin-push-msg', 'plugin.apk')
+//        task.dependsOn createCopyTask(':test-plugin-general-cases', 'release', 'test-plugin-general-cases', 'plugin.apk')
+//    }
+//}

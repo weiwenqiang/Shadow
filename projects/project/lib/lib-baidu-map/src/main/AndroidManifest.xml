@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.baidumap">
+
+    <!--    允许程序访问网络连接，可能产生GPRS流量-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--    允许程序获取网络信息状态，如当前的网络连接是否有效-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config">
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="vADXzuCoGigiCOMWsGx7aRHY"></meta-data>
+        <activity
+            android:name="com.baidumap.activity.MapPoiSelectActivity"
+            android:theme="@style/ThemeMain"></activity>
+    </application>
+
+</manifest>

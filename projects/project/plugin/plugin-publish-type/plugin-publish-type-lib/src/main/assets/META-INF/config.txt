@@ -1,0 +1,25 @@
+{
+    "apk": {
+        "apiType": "pro",
+        "apiVersion": "v3.1",
+        "apkTitle": "有类型发布文章",
+        "apkType": "plugin",
+        "appid": "30001",
+        "author": "魏文强",
+        "pack": "魏文强",
+        "packTime": "2020-12-12 12:12:12",
+        "purpose": "有类型发布文章",
+        "versionCode": 200,
+        "versionName": "2.0.1",
+        "plugCode": "PLUGIN_PUBLISH_TYPE",
+        "enter":"com.zzz.myemergencyclientnew.PublishTypeArticleActivity",
+        "receiver":"com.zzz.myemergencyclientnew.MyReceiver",
+        "receiverAction":"com.action",
+        "apkVersionName":"3.0.1",
+        "apkVersionCode":3,
+        "apkFileName":"plugin-publish-type-debug.apk",
+        "filePath":"/files"
+    },
+    "feature": [
+                   ]
+}

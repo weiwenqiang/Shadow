@@ -48,8 +48,6 @@ public class CopySoBlocTest {
 
     @After
     public void tearDown() throws Exception {
-        if (!apkFile.exists()) return;
-
         FileUtils.deleteDirectory(soDir);
         copiedTagFile.delete();
     }

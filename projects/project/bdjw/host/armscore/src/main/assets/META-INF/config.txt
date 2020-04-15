@@ -1,0 +1,27 @@
+{
+    "apk": {
+        "apiType": "pro",
+        "apiVersion": "v3.1",
+        "apkTitle": "兵馨",
+        "apkType": "host",
+        "appid": "10001",
+        "author": "魏文强",
+        "pack": "魏文强",
+        "packTime": "2020-12-12 12:12:12",
+        "purpose": "宿主",
+        "versionCode": 204,
+        "versionName": "2.0.4",
+        "plugCode": "HOST",
+        "enter":"com.zzz.myemergencyclientnew.activity.splash.SplashActivity",
+        "receiver":"com.zzz.myemergencyclientnew.MyReceiver",
+        "receiverAction":"com.action",
+        "apkVersionName":"2.0.4",
+        "apkVersionCode":4,
+        "apkFileName":"armscore-host.apk",
+        "filePath":"/files",
+        "forced":1,
+        "updateLog":"1，添加删除信用卡接口。\r\n2，添加vip认证。\r\n3，区分自定义消费，一个小时不限制。\r\n4，添加放弃任务接口，小时内不生成。\r\n5，消费任务手动生成。"
+    },
+    "feature": [
+                   ]
+}

@@ -1,0 +1,180 @@
+<resources>
+<!--    <string name="app_name">兵馨</string>-->
+
+<!--    <string name="news">新闻</string>-->
+<!--    <string name="use">应用</string>-->
+<!--    <string name="issue">发布</string>-->
+<!--    <string name="csd">服务</string>-->
+<!--    <string name="me">我的</string>-->
+
+<!--    &lt;!&ndash; 底部导航 &ndash;&gt;-->
+<!--    <string name="home_tab_index">首页</string>-->
+<!--    <string name="home_tab_adde">应用</string>-->
+<!--    <string name="home_tab_cargo">发布</string>-->
+<!--    <string name="home_tab_money">服务</string>-->
+<!--    <string name="home_tab_personal">我的</string>-->
+
+<!--    <string name="ic_publish">publish_%1$s</string>-->
+
+<!--    <string name="confirm">确认</string>-->
+<!--    <string name="cancel">取消</string>-->
+<!--    <string name="please">请选择</string>-->
+
+<!--    <string name="hello_world">Hello world!</string>-->
+<!--    <string name="action_settings">Settings</string>-->
+<!--    <string name="are_link_title">Link</string>-->
+<!--    <string name="are_link_insert_hint">Insert a link</string>-->
+<!--    <string name="are_image_insert_hint">Insert an image</string>-->
+<!--    <string name="ok">OK</string>-->
+
+<!--    <string name="title_activity_are__video_player">ARE Video</string>-->
+<!--    <string name="btn_attach_video">Attach Video</string>-->
+<!--    <string name="dummy_content">DUMMY\nCONTENT</string>-->
+
+<!--    <string name="title_activity_default_image_preview">ARE DefaultImagePreviewActivity</string>-->
+<!--    <string name="save_to_local">Save to local</string>-->
+
+<!--&lt;!&ndash;    <string name="init_login">"{\"applyList\": \"[{title='权威栏目', onClick=7, route='/ProgramaList/fragment', netApi='/app/apply/emergKnowl'}, {title='应急知识', onClick=4, route='/TangramSingle/fragment', netApi='/app/apply/emergKnowl'}, {title='学生军训', onClick=4, route='/TangramSingle/fragment', netApi='/app/apply/studentMilitary'}, {title='民兵预备役', onClick=4, route='/TangramSingle/fragment', netApi='/app/apply/militiaReserve'}, {title='国防教育', onClick=4, route='/TangramSingle/fragment', netApi='/app/apply/defenceEdu'}, {title='创业创收', onClick=4, route='/TangramSingle/fragment', netApi='/app/apply/careerEarn'}, {title='政治教育', onClick=2, route='/WebSingle/fragment', netApi='http://edu.bxapi.sxbdjw.com/web/index.html'}, {title='实用技术', onClick=2, route='/WebSingle/fragment', netApi='http://www.cnncty.com/mobile/'}]\",\"serveList\": \"[{title='公告', onClick=7, route='/ServeNotice/fragment', netApi='/app/apply/emergKnowl'}, {title='领导', onClick=9, route='/BossLead/fragment', netApi='001100000002'}, {title='生活', onClick=8, route='/WebSingle/fragment', netApi='http://vue.bxapi.sxbdjw.com/#/notice'}, {title='客服', onClick=8, route='/WebSingle/fragment', netApi='https://yzf.qq.com/xv/web/static/chat/index.html?sign=37ef9b97db7756c02b4c99e84fe5b761ba3f90a071c11e624a1357b286688a29f9cf41243f42d9fd2685ec340fc0895a2d92ea'}]\",\"token\": \"\",\"userinfo\": {\"nickname\": \"游客\",\"photo\": \"\"}}"</string>&ndash;&gt;-->
+
+<!--    <string name="lorem">-->
+<!--		Lorem ipsum dolor sit amet, consectetur adipiscing elit.-->
+<!--		In mollis est vitae erat laoreet consectetur. Mauris dui mauris,-->
+<!--		dictum vel egestas vel, porta sed ante. Phasellus congue viverra ipsum,-->
+<!--		in elementum arcu ultricies nec.Morbi tincidunt nisl lacinia, placerat nisi eget, luctus tortor.-->
+<!--		Morbi efficitur dictum leo, sit amet volutpat lorem sodales nec. Quisque et erat et turpis fringilla condimentum.-->
+<!--		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris auctor vulputate libero vitae iaculis.-->
+<!--		Curabitur id blandit quam. Praesent massa ante, pulvinar vitae sagittis commodo, scelerisque porttitor eros.-->
+<!--		Mauris suscipit a enim nec congue. Mauris tristique cursus aliquet. Nunc quis hendrerit nunc. Praesent tristique tellus purus,-->
+<!--		a pretium ex gravida id. Cras laoreet malesuada nulla, at bibendum metus ultricies a. Fusce eu ornare arcu. Proin ut molestie est.-->
+<!--		Vestibulum quis vehicula erat. Nam sed tempus nibh. Sed tortor ante, maximus venenatis odio sed, ultricies maximus lectus.-->
+<!--		Aliquam sed volutpat ligula. Integer bibendum, magna ac lacinia suscipit,-->
+<!--		risus libero rutrum justo, sed tempus augue tellus eget est. Curabitur convallis augue nisl,-->
+<!--		id efficitur urna posuere faucibus. Ut sed egestas nulla, eu finibus metus. Nunc a arcu ante.-->
+<!--		Aenean ullamcorper dolor non condimentum congue. Aenean mauris nunc, pellentesque at placerat vitae,-->
+<!--		aliquet quis orci. Curabitur maximus augue ut bibendum sagittis.-->
+<!--	</string>-->
+
+<!--    <string name="trimmed_done">视频裁剪完成！</string>-->
+<!--    <string name="trimming">正在裁剪视频...</string>-->
+<!--    <string name="compressing">正在压缩视频...</string>-->
+<!--    <string name="compressed_done">视频压缩完成！</string>-->
+<!--    <string name="video_shoot_tip">拖动选择你要发表的%d秒以内片段！</string>-->
+<!--    <string name="open_permission">开启权限</string>-->
+<!--    <string name="video_record_des">要录制视频，需要授予相机和麦克风使用权.</string>-->
+<!--    <string name="recording">录制</string>-->
+<!--    <string name="back">返回</string>-->
+<!--    <string name="finish">完成</string>-->
+
+<!--    <string name="setting">Setting</string>-->
+<!--    <string name="resume">Resume</string>-->
+<!--&lt;!&ndash;    <string name="cancel">Cancel</string>&ndash;&gt;-->
+<!--&lt;!&ndash;    <string name="ok">@android:string/ok</string>&ndash;&gt;-->
+
+<!--    <string name="successfully">Successful</string>-->
+<!--    <string name="failure">Failure</string>-->
+
+<!--    <string name="permission_camera">Camera</string>-->
+<!--    <string name="permission_contact">Contact</string>-->
+<!--    <string name="permission_location">Location</string>-->
+
+<!--    <string name="permission_calendar">Calendar</string>-->
+<!--    <string name="permission_microphone">Microphone</string>-->
+<!--    <string name="permission_storage">Storage</string>-->
+
+<!--    <string name="permission_phone">Phone</string>-->
+<!--    <string name="permission_call_log">Call Log</string>-->
+<!--    <string name="permission_activity_recognition">Activity Recognition</string>-->
+<!--    <string name="permission_sensors">Sensors</string>-->
+<!--    <string name="permission_sms">SMS</string>-->
+<!--    <string name="permission_setting">Permission Setting</string>-->
+
+<!--    <string name="permission_notification">Notification</string>-->
+<!--    <string name="permission_notification_listener">Notification Listener</string>-->
+
+<!--    <string name="permission_install">Install Apk</string>-->
+<!--    <string name="permission_overlay">AlertWindow</string>-->
+
+<!--    <string name="permission_write_setting">Write System Setting</string>-->
+
+<!--    <string name="title_dialog">Tips</string>-->
+<!--    <string name="message_permission_rationale">Grant the following permissions to continue the program:\n\n%1$s</string>-->
+<!--    <string name="message_permission_always_failed">Please give us permission in the settings:\n\n%1$s</string>-->
+<!--    <string name="message_setting_comeback">The user comes back from the settings page.</string>-->
+
+<!--    <string name="message_notification_rationale">Your device does not allow us to pop up notifications.</string>-->
+<!--    <string name="message_notification_listener_rationale">Your device does not allow us to access notifications.</string>-->
+
+<!--    <string name="message_install_failed">Your device is not allowed us to install apps.</string>-->
+
+<!--    <string name="message_overlay_failed">Your device is not allowed us to draw on other applications.</string>-->
+
+<!--    <string name="message_write_setting_failed">Your device is not allowed us to modify the system settings.</string>-->
+
+<!--    <string name="message_error_storage">Please check the external storage device.</string>-->
+<!--    <string name="message_error_storeage_inavailable">External storage device is not available.</string>-->
+
+<!--    <string name="message_error_save_failed">Save failed, please try again.</string>-->
+
+<!--    <string name="simple_circle_button_example">Simple Circle Button Example</string>-->
+<!--    <string name="text_inside_circle_button_example">Text Inside Circle Button Example</string>-->
+<!--    <string name="text_outside_circle_button_example">Text Outside Circle Button Example</string>-->
+<!--    <string name="ham_button_example">Ham Button Example</string>-->
+<!--    <string name="square_and_piece_corner_radius_example">Square And Piece Corner Radius Example</string>-->
+<!--    <string name="boom_example">Boom Example</string>-->
+<!--    <string name="button_place_alignment_example">Button Place Alignment Example</string>-->
+<!--    <string name="order_example">Order Example</string>-->
+<!--    <string name="actionbar_example">ActionBar Example</string>-->
+<!--    <string name="tool_bar_example">ToolBar Example</string>-->
+<!--    <string name="draggable_example">Draggable Example</string>-->
+<!--    <string name="ease_example">Ease Example</string>-->
+<!--    <string name="listener_example">Listener Example</string>-->
+<!--    <string name="control_example">Control Example</string>-->
+<!--    <string name="share_example">Share Example</string>-->
+<!--    <string name="list_example">List Example</string>-->
+<!--    <string name="recycler_view_example">Recycler View Example</string>-->
+<!--    <string name="fragment_example">Fragment Example</string>-->
+<!--    <string name="change_boom_button_example">Change Boom Button Example</string>-->
+<!--    <string name="three_d_animation_example">3D Animation Example</string>-->
+<!--    <string name="custom_position_example">Custom Position Example</string>-->
+<!--    <string name="fade_views_example">Fade Views Example</string>-->
+<!--    <string name="orientation_example">Orientation Example</string>-->
+
+<!--    <string name="text_inside_circle_button_text_normal">Text Inside Circle Button(Normal)</string>-->
+<!--    <string name="text_inside_circle_button_text_highlighted">Text Inside Circle Button(Highlighted)</string>-->
+<!--    <string name="text_inside_circle_button_text_unable">Text Inside Circle Button(Unable)</string>-->
+
+<!--    <string name="text_outside_circle_button_text_normal">Text Outside Circle Button(Normal)</string>-->
+<!--    <string name="text_outside_circle_button_text_highlighted">Text Outside Circle Button(Highlighted)</string>-->
+<!--    <string name="text_outside_circle_button_text_unable">Text Outside Circle Button(Unable)</string>-->
+
+<!--    <string name="text_ham_button_text_normal">Ham Button Text(Normal)</string>-->
+<!--    <string name="text_ham_button_text_highlighted">Ham Button Text(Highlighted)</string>-->
+<!--    <string name="text_ham_button_text_unable">Ham Button Text(Unable)</string>-->
+<!--    <string name="text_ham_button_sub_text_normal">Ham Button Sub Text(Normal)</string>-->
+<!--    <string name="text_ham_button_sub_text_highlighted">Ham Button Sub Text(Highlighted)</string>-->
+<!--    <string name="text_ham_button_sub_text_unable">Ham Button Sub Text(Unable)</string>-->
+
+<!--    <string name="myChannel">已选频道</string>-->
+<!--    <string name="channelEdit">编辑</string>-->
+<!--    <string name="channelEditFinish">完成</string>-->
+
+<!--    <string name="rmb">¥</string>-->
+
+<!--    <string name="channel_critical">Critical events</string>-->
+<!--    <string name="channel_importance">Importance events</string>-->
+<!--    <string name="channel_default">Default events</string>-->
+<!--    <string name="channel_low">Low events</string>-->
+<!--    <string name="channel_media">Media events</string>-->
+
+    <string name="ip_all_images">所有图片</string>
+    <string name="ip_folder_image_count">共%1$d张</string>
+    <string name="ip_preview_image_count">%1$d/%2$d</string>
+    <string name="ip_select_limit">最多选择%1$d张图片</string>
+    <string name="ip_complete">完成</string>
+    <string name="ip_select_complete">完成(%1$d/%2$d)</string>
+    <string name="ip_preview">预览</string>
+    <string name="ip_preview_count">预览(%1$d)</string>
+    <string name="ip_photo_crop">图片裁剪</string>
+    <string name="ip_origin">原图</string>
+    <string name="ip_origin_size">原图(%1$s)</string>
+</resources>

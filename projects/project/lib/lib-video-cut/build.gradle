@@ -1,0 +1,127 @@
+apply plugin: 'com.android.library'
+
+//apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.alibaba.arouter'
+
+android {
+//    compileSdkVersion project.COMPILE_SDK_VERSION
+    compileSdkVersion "android-R"
+    buildToolsVersion "30-rc1"
+
+    defaultConfig {
+        minSdkVersion project.MIN_SDK_VERSION
+        targetSdkVersion project.TARGET_SDK_VERSION
+        versionCode project.VERSION_CODE
+        versionName project.VERSION_NAME
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        javaCompileOptions {
+            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                arguments = [moduleName: project.getName()]
+                //注释器
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+//        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    lintOptions {
+        quiet true
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'GoogleAppIndexingWarning'
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    packagingOptions {
+        exclude 'META-INF/library-core_release.kotlin_module'
+        exclude 'META-INF/library_release.kotlin_module'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/rxjava.properties'
+    }
+    dexOptions {
+        preDexLibraries = false
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+//        includeCompileClasspath = true
+    }
+//    generateStubs = true
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.70"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //官方
+    implementation 'androidx.cardview:cardview:1.0.0'
+//    implementation 'com.android.support:appcompat-v7:29.0.0'
+//    implementation 'com.android.support:support-v4:29.0.0'
+//    implementation 'com.android.support:design:29.0.0'
+//    implementation "com.android.support:percent:29.0.0"
+//    implementation "com.android.support:support-vector-drawable:29.0.0"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+
+    //通用库
+    api project(':lib-common')
+    //常量库
+    api project(':constant')
+
+    //路由
+    implementation 'com.alibaba:arouter-api:1.4.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.0'
+//    kapt 'com.alibaba:arouter-annotation:1.0.6'
+    kapt 'com.alibaba:arouter-compiler:1.2.0'
+    //视频裁剪
+    implementation 'nl.bravobit:android-ffmpeg:1.1.5'
+    //视频裁剪用到的工具类，可替换
+    implementation 'com.github.iknow4:android-utils-sdk:1.1.2'
+    // RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.6"
+    //动态权限
+    implementation 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.5@aar'
+    //图片处理
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    //事件总线
+    implementation 'org.greenrobot:eventbus:3.1.1'
+}

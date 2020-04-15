@@ -9,8 +9,9 @@ def gitShortRev() {
 
 allprojects {
     ext.COMPILE_SDK_VERSION = 29
-    ext.MIN_SDK_VERSION = 14
-    ext.TARGET_SDK_VERSION = 28
+    ext.BUILD_TOOLS_VERSION = "30-rc1"
+    ext.MIN_SDK_VERSION = 21
+    ext.TARGET_SDK_VERSION = 29
     ext.VERSION_CODE = 1
     ext.VERSION_NAME = "2.0.12"
     if ("${System.env.PUBLISH_RELEASE}".equalsIgnoreCase("true")) {
@@ -21,10 +22,12 @@ allprojects {
         ext.VERSION_SUFFIX = "-${gitShortRev()}-SNAPSHOT"
     }
     ext.ARTIFACT_VERSION = ext.VERSION_NAME + ext.VERSION_SUFFIX
-    ext.TEST_HOST_APP_APPLICATION_ID = 'com.tencent.shadow.test.hostapp'
-    ext.SAMPLE_HOST_APP_APPLICATION_ID = 'com.tencent.shadow.sample.host'
+    ext.TEST_HOST_APP_APPLICATION_ID = 'com.zzz.myemergencyclientnew'
+//    ext.SAMPLE_HOST_APP_APPLICATION_ID = 'com.tencent.shadow.sample.host'
     repositories {
         google()
         jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url "https://maven.google.com" }
     }
 }

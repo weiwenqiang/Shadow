@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false">
+
+        <com.zzz.myemergencyclientnew.widget.custom.dynamicnavigation.NavigationTopView
+            android:id="@+id/lyt_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"></com.zzz.myemergencyclientnew.widget.custom.dynamicnavigation.NavigationTopView>
+        <!--        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx-->
+        <!--            android:id="@+id/bnve"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:background="@android:color/white"-->
+        <!--            app:itemIconTint="@color/navi_home_color"-->
+        <!--            app:itemTextColor="@color/navi_home_color"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:menu="@menu/menu_navigation" />-->
+        <com.zzz.myemergencyclientnew.widget.plug.ControlViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/lyt_navigation"
+            app:layout_constraintTop_toBottomOf="@+id/lyt_top" />
+
+        <com.zzz.myemergencyclientnew.widget.custom.dynamicnavigation.NavigationBottomView
+            android:id="@+id/lyt_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        </com.zzz.myemergencyclientnew.widget.custom.dynamicnavigation.NavigationBottomView>
+        <!--        <com.zzz.myemergencyclientnew.widget.custom.navigation.NavigationView-->
+        <!--            android:id="@+id/lyt_navigation"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="55dp"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:visibility="visible"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent">-->
+
+        <!--        </com.zzz.myemergencyclientnew.widget.custom.navigation.NavigationView>-->
+
+        <!--        <ImageView-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_alignParentBottom="true"-->
+        <!--            android:layout_centerHorizontal="true"-->
+        <!--            android:clipChildren="false"-->
+        <!--            android:src="@drawable/tabbar_icon_cargo_down_normal"-->
+        <!--            android:visibility="visible"-->
+        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent" />-->
+
+
+        <!--        <FrameLayout-->
+        <!--            android:id="@+id/home_activity_frag_container"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="0dp"-->
+        <!--            app:layout_constraintBottom_toTopOf="@id/bnve"-->
+        <!--            app:layout_constraintTop_toTopOf="parent" />-->
+
+        <!--        <FrameLayout-->
+        <!--            android:id="@+id/ll_content"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:fitsSystemWindows="true"-->
+        <!--            android:visibility="gone">-->
+
+        <!--            <fragment-->
+        <!--                android:id="@+id/conversationlist"-->
+        <!--                android:name="io.rong.imkit.fragment.ConversationListFragment"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="match_parent"-->
+        <!--                android:tag="conversationlist" />-->
+
+        <!--        </FrameLayout>-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

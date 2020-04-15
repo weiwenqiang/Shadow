@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_top"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <com.zzz.myemergencyclientnew.widget.custom.CircleImageView
+        android:id="@+id/img_head_portrait"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:src="@mipmap/default_head_photo"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="游客"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_bigger"
+        app:layout_constraintBottom_toBottomOf="@+id/img_head_portrait"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_head_portrait"
+        app:layout_constraintTop_toTopOf="@+id/img_head_portrait" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_state"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_horizontal"
+        android:textColor="#000000"
+        android:textSize="@dimen/text_smaller"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!--    <com.allen.library.SuperButton-->
+    <!--        android:id="@+id/stv_my_data"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="30dp"-->
+    <!--        android:layout_marginTop="20dp"-->
+    <!--        android:paddingLeft="20dp"-->
+    <!--        android:paddingRight="10dp"-->
+    <!--        android:text="个人资料"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="@dimen/text_small"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:sCornersBottomLeftRadius="15dp"-->
+    <!--        app:sCornersTopLeftRadius="15dp"-->
+    <!--        app:sSolidColor="@color/yellow"-->
+    <!--        app:sStrokeColor="@color/red" />-->
+
+    <!--    <com.allen.library.SuperButton-->
+    <!--        android:id="@+id/stv_real_name"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="30dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:paddingLeft="20dp"-->
+    <!--        android:paddingRight="10dp"-->
+    <!--        android:text="未登录"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="@dimen/text_small"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/stv_my_data"-->
+    <!--        app:sCornersBottomLeftRadius="15dp"-->
+    <!--        app:sCornersTopLeftRadius="15dp"-->
+    <!--        app:sSolidColor="@color/green"-->
+    <!--        app:sStrokeColor="@color/red" />-->
+
+    <!--    <com.allen.library.SuperButton-->
+    <!--        android:id="@+id/stv_militia_auth"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="30dp"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:paddingLeft="20dp"-->
+    <!--        android:paddingRight="10dp"-->
+    <!--        android:text="未登录"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="@dimen/text_small"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/stv_real_name"-->
+    <!--        app:sCornersBottomLeftRadius="15dp"-->
+    <!--        app:sCornersTopLeftRadius="15dp"-->
+    <!--        app:sSolidColor="@color/purple"-->
+    <!--        app:sStrokeColor="@color/red" />-->
+
+    <!--    <View-->
+    <!--        android:id="@+id/bg_content"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

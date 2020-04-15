@@ -1,0 +1,25 @@
+{
+    "apk": {
+        "apiType": "pro",
+        "apiVersion": "v3.1",
+        "apkTitle": "帮助反馈",
+        "apkType": "plugin",
+        "appid": "30001",
+        "author": "魏文强",
+        "pack": "魏文强",
+        "packTime": "2020-12-12 12:12:12",
+        "purpose": "帮助反馈",
+        "versionCode": 5,
+        "versionName": "2.0.5",
+        "plugCode": "PLUGIN_HELP_FEEDBACK",
+        "enter":"com.zzz.myemergencyclientnew.HelpFeedbackActivity",
+        "receiver":"com.zzz.myemergencyclientnew.MyReceiver",
+        "receiverAction":"com.action",
+        "apkVersionName":"2.0.5",
+        "apkVersionCode":5,
+        "apkFileName":"plugin-help-feedback-debug.apk",
+        "filePath":"/files"
+    },
+    "feature": [
+                   ]
+}

@@ -22,31 +22,32 @@ import android.content.ComponentName
 import android.content.pm.*
 import com.tencent.shadow.core.runtime.PluginPackageManager
 
-internal class PluginPackageManagerImpl(private val hostPackageManager: PackageManager,
-                                        private val packageInfo: PackageInfo,
-                                        private val allPluginPackageInfo: () -> (Array<PackageInfo>))
-    : PluginPackageManager {
+internal class PluginPackageManagerImpl(
+    private val hostPackageManager: PackageManager,
+    private val packageInfo: PackageInfo,
+    private val allPluginPackageInfo: () -> (Array<PackageInfo>)
+) : PluginPackageManager {
     override fun getApplicationInfo(packageName: String?, flags: Int): ApplicationInfo =
-            if (packageInfo.applicationInfo.packageName == packageName) {
-                packageInfo.applicationInfo
-            } else {
-                hostPackageManager.getApplicationInfo(packageName, flags)
-            }
+        if (packageInfo.applicationInfo.packageName == packageName) {
+            packageInfo.applicationInfo
+        } else {
+            hostPackageManager.getApplicationInfo(packageName, flags)
+        }
 
     override fun getPackageInfo(packageName: String?, flags: Int): PackageInfo? =
-            if (packageInfo.applicationInfo.packageName == packageName) {
-                packageInfo
-            } else {
-                hostPackageManager.getPackageInfo(packageName, flags)
-            }
+        if (packageInfo.applicationInfo.packageName == packageName) {
+            packageInfo
+        } else {
+            hostPackageManager.getPackageInfo(packageName, flags)
+        }
 
     override fun getActivityInfo(component: ComponentName, flags: Int): ActivityInfo {
         if (component.packageName == packageInfo.applicationInfo.packageName) {
             val pluginActivityInfo = allPluginPackageInfo()
-                    .mapNotNull { it.activities }
-                    .flatMap { it.asIterable() }.find {
-                        it.name == component.className
-                    }
+                .mapNotNull { it.activities }
+                .flatMap { it.asIterable() }.find {
+                    it.name == component.className
+                }
             if (pluginActivityInfo != null) {
                 return pluginActivityInfo
             }
@@ -56,9 +57,9 @@ internal class PluginPackageManagerImpl(private val hostPackageManager: PackageM
 
     override fun resolveContentProvider(name: String?, flags: Int): ProviderInfo? {
         val pluginProviderInfo = allPluginPackageInfo()
-                .flatMap { it.providers.asIterable() }.find {
-                    it.authority == name
-                }
+            .flatMap { it.providers.asIterable() }.find {
+                it.authority == name
+            }
         if (pluginProviderInfo != null) {
             return pluginProviderInfo
         }

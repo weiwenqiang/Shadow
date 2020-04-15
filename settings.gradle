@@ -1,4 +1,4 @@
-rootProject.name = 'shadow'
+rootProject.name = 'Shadow'
 
 if (!System.getenv().containsKey("ANDROID_HOME")) {
     throw new RuntimeException("未定义ANDROID_HOME环境变量。" +
@@ -11,62 +11,69 @@ includeBuild 'projects/sdk/core'
 includeBuild 'projects/sdk/dynamic'
 
 includeTest()
-includeSample()
+includeOnlyLibrary()//可选依赖包
+includePluginHelpFeedback()//帮助反馈
+includePluginPublishType()//发布有类型
+includePluginPublishNoType()//发布无类型
+includePluginPublishSos()//发布求救
 
 def includeTest() {
-    include 'test-dynamic-host',
-            'test-dynamic-manager',
-            'test-dynamic-loader',
-            'test-dynamic-runtime',
-            'constant',
-            'custom-view',
+    include 'constant',
             'plugin-use-host-code-lib',
-            'test-manager',
-            'general-cases-lib',
-            'test-plugin-general-cases',
-            'general-cases-app',
-            'test-multidex-lib',
-            'test-plugin-multidex-v1_0_2',
-            'test-plugin-multidex-v2_0_1',
-            'test-none-dynamic-host'
-    project(':test-dynamic-host').projectDir = file('projects/test/dynamic/host/test-dynamic-host')
-    project(':test-dynamic-manager').projectDir = file('projects/test/dynamic/manager/test-dynamic-manager')
-    project(':test-dynamic-loader').projectDir = file('projects/test/dynamic/plugin/test-dynamic-loader')
-    project(':test-dynamic-runtime').projectDir = file('projects/test/dynamic/plugin/test-dynamic-runtime')
-    project(':constant').projectDir = file('projects/test/lib/constant')
-    project(':custom-view').projectDir = file('projects/test/lib/custom-view')
-    project(':plugin-use-host-code-lib').projectDir = file('projects/test/lib/plugin-use-host-code-lib')
-    project(':test-manager').projectDir = file('projects/test/lib/test-manager')
-    project(':general-cases-lib').projectDir = file('projects/test/plugin/general-cases/general-cases-lib')
-    project(':test-plugin-general-cases').projectDir = file('projects/test/plugin/general-cases/test-plugin-general-cases')
-    project(':general-cases-app').projectDir = file('projects/test/plugin/general-cases/general-cases-app')
-    project(':test-multidex-lib').projectDir = file('projects/test/plugin/particular-cases/multidex/test-multidex-lib')
-    project(':test-plugin-multidex-v1_0_2').projectDir = file('projects/test/plugin/particular-cases/multidex/test-plugin-multidex-v1_0_2')
-    project(':test-plugin-multidex-v2_0_1').projectDir = file('projects/test/plugin/particular-cases/multidex/test-plugin-multidex-v2_0_1')
-    project(':test-none-dynamic-host').projectDir = file('projects/test/none-dynamic/host/test-none-dynamic-host')
+            'lib-common',
+            'armscore'
+    project(':constant').projectDir = file('projects/project/lib/constant')
+    project(':plugin-use-host-code-lib').projectDir = file('projects/project/lib/plugin-use-host-code-lib')
+    project(':lib-common').projectDir = file('projects/project/lib/lib-common')
+    project(':armscore').projectDir = file('projects/project/bdjw/host/armscore')
 }
 
-def includeSample() {
-    include 'sample-constant',
-            'sample-host',
-            'sample-host-lib',
-            'sample-manager',
-            'sample-loader',
-            'sample-runtime',
-            'pinnedheaderexpandablelistview',
-            'slidingmenu',
-            'sample-app-lib',
-            'sample-normal-app',
-            'sample-plugin-app'
-    project(':sample-constant').projectDir = file('projects/sample/source/sample-constant')
-    project(':sample-host').projectDir = file('projects/sample/source/sample-host')
-    project(':sample-host-lib').projectDir = file('projects/sample/source/sample-host-lib')
-    project(':sample-manager').projectDir = file('projects/sample/source/sample-manager')
-    project(':sample-loader').projectDir = file('projects/sample/source/sample-plugin/sample-loader')
-    project(':sample-runtime').projectDir = file('projects/sample/source/sample-plugin/sample-runtime')
-    project(':pinnedheaderexpandablelistview').projectDir = file('projects/sample/source/sample-plugin/third-party/pinnedheaderexpandablelistview')
-    project(':slidingmenu').projectDir = file('projects/sample/source/sample-plugin/third-party/slidingmenu')
-    project(':sample-app-lib').projectDir = file('projects/sample/source/sample-plugin/sample-app-lib')
-    project(':sample-normal-app').projectDir = file('projects/sample/source/sample-plugin/sample-normal-app')
-    project(':sample-plugin-app').projectDir = file('projects/sample/source/sample-plugin/sample-plugin-app')
+def includeOnlyLibrary() {
+    include 'lib-dialog-ui',
+            'lib-image-picker',
+            'lib-toast',
+            'lib-video-cut',
+            'lib-baidu-map'
+    project(':lib-dialog-ui').projectDir = file('projects/project/lib/lib-dialog-ui')
+    project(':lib-image-picker').projectDir = file('projects/project/lib/lib-image-picker')
+    project(':lib-toast').projectDir = file('projects/project/lib/lib-toast')
+    project(':lib-video-cut').projectDir = file('projects/project/lib/lib-video-cut')
+    project(':lib-baidu-map').projectDir = file('projects/project/lib/lib-baidu-map')
+}
+
+
+def includePluginHelpFeedback() {
+    include 'plugin-help-feedback-lib',
+            'plugin-help-feedback',
+            'plugin-help-feedback-app'
+    project(':plugin-help-feedback-lib').projectDir = file('projects/project/plugin/plugin-help-feedback/plugin-help-feedback-lib')
+    project(':plugin-help-feedback').projectDir = file('projects/project/plugin/plugin-help-feedback/plugin-help-feedback')
+    project(':plugin-help-feedback-app').projectDir = file('projects/project/plugin/plugin-help-feedback/plugin-help-feedback-app')
+}
+
+def includePluginPublishType() {
+    include 'plugin-publish-type-lib',
+            'plugin-publish-type',
+            'plugin-publish-type-app'
+    project(':plugin-publish-type-lib').projectDir = file('projects/project/plugin/plugin-publish-type/plugin-publish-type-lib')
+    project(':plugin-publish-type').projectDir = file('projects/project/plugin/plugin-publish-type/plugin-publish-type')
+    project(':plugin-publish-type-app').projectDir = file('projects/project/plugin/plugin-publish-type/plugin-publish-type-app')
+}
+
+def includePluginPublishNoType() {
+    include 'plugin-publish-notype-lib',
+            'plugin-publish-notype',
+            'plugin-publish-notype-app'
+    project(':plugin-publish-notype-lib').projectDir = file('projects/project/plugin/plugin-publish-notype/plugin-publish-notype-lib')
+    project(':plugin-publish-notype').projectDir = file('projects/project/plugin/plugin-publish-notype/plugin-publish-notype')
+    project(':plugin-publish-notype-app').projectDir = file('projects/project/plugin/plugin-publish-notype/plugin-publish-notype-app')
+}
+
+def includePluginPublishSos() {
+    include 'plugin-publish-sos-lib',
+            'plugin-publish-sos',
+            'plugin-publish-sos-app'
+    project(':plugin-publish-sos-lib').projectDir = file('projects/project/plugin/plugin-publish-sos/plugin-publish-sos-lib')
+    project(':plugin-publish-sos').projectDir = file('projects/project/plugin/plugin-publish-sos/plugin-publish-sos')
+    project(':plugin-publish-sos-app').projectDir = file('projects/project/plugin/plugin-publish-sos/plugin-publish-sos-app')
 }

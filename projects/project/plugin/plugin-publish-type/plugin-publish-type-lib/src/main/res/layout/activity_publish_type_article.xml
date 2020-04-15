@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:are="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mView"
+            type="com.zzz.myemergencyclientnew.PublishTypeArticleActivity" />
+        <variable
+            name="req"
+            type="com.zzz.myemergencyclientnew.PublishTypeReq" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/main_color"
+            android:elevation="6dp"
+            android:theme="@style/Base.Theme.AppCompat.Light"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@mipmap/ic_action_back"
+            app:titleTextColor="@color/white" />
+
+        <EditText
+            android:id="@+id/edt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_edt_grey"
+            android:hint="请输入标题"
+            android:text="@{req.title}"
+            android:padding="10dp"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <EditText
+            android:id="@+id/edt_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/bg_edt_grey"
+            android:gravity="left"
+            android:hint="请输入正文"
+            android:text="@{req.content}"
+            android:lines="7"
+            android:padding="10dp"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_small"
+            app:layout_constraintTop_toBottomOf="@+id/edt_title" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_publish_type"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:onClick="@{mView::publishType}"
+            app:layout_constraintTop_toBottomOf="@+id/edt_text"
+            app:sBackgroundDrawableRes="@drawable/bg_selector_white"
+            app:sDividerLineType="bottom"
+            app:sLeftTextString="知识类型"
+            app:sRightIconRes="@mipmap/img_gray_right"
+            app:sRightTextString="" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_image"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{mView::addImage}"
+            app:layout_constraintTop_toBottomOf="@+id/stv_publish_type"
+            app:sBackgroundDrawableRes="@drawable/bg_selector_white"
+            app:sDividerLineType="bottom"
+            app:sLeftTextString="选择图片"
+            app:sRightIconRes="@mipmap/img_gray_right" />
+
+        <com.allen.library.SuperTextView
+            android:id="@+id/stv_video"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{mView::addVideo}"
+            app:layout_constraintTop_toBottomOf="@+id/stv_image"
+            app:sBackgroundDrawableRes="@drawable/bg_selector_white"
+            app:sDividerLineType="bottom"
+            app:sLeftTextString="选择视频"
+            app:sRightIconRes="@mipmap/img_gray_right" />
+
+        <com.zzz.myemergencyclientnew.widget.plug.ExpandGridView
+            android:id="@+id/gridview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="4dp"
+            android:layout_marginRight="10dp"
+            android:numColumns="5"
+            android:layout_marginLeft="10dp"
+            android:verticalSpacing="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/stv_video" />
+
+        <com.shuyu.gsyvideoplayer.video.StandardGSYVideoPlayer
+            android:id="@+id/video_player"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginRight="10dp"
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/stv_video"
+            android:layout_centerInParent="true" />
+
+        <Button
+            android:id="@+id/btn_affirm"
+            style="@style/BtnMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:onClick="@{mView::affirm}"
+            android:text="提交"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

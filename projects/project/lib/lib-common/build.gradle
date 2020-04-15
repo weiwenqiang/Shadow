@@ -1,0 +1,134 @@
+apply plugin: 'com.android.library'
+
+//apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply plugin: 'com.alibaba.arouter'
+
+android {
+//    compileSdkVersion project.COMPILE_SDK_VERSION
+    compileSdkVersion "android-R"
+    buildToolsVersion "30-rc1"
+
+    defaultConfig {
+        minSdkVersion project.MIN_SDK_VERSION
+        targetSdkVersion project.TARGET_SDK_VERSION
+        versionCode project.VERSION_CODE
+        versionName project.VERSION_NAME
+
+        testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
+        javaCompileOptions {
+            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName(), AROUTER_GENERATE_DOC: "enable"]
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+                //注释器
+                includeCompileClasspath = true
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+//        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+    lintOptions {
+        quiet true
+        checkReleaseBuilds false
+        abortOnError false
+        disable 'GoogleAppIndexingWarning'
+    }
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+    packagingOptions {
+        exclude 'META-INF/library-core_release.kotlin_module'
+        exclude 'META-INF/library_release.kotlin_module'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/rxjava.properties'
+    }
+    dexOptions {
+        preDexLibraries = false
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+//        includeCompileClasspath = true
+    }
+//    generateStubs = true
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.70"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //官方
+    implementation 'androidx.cardview:cardview:1.0.0'
+//    implementation 'com.android.support:appcompat-v7:29.0.0'
+//    implementation 'com.android.support:support-v4:29.0.0'
+//    implementation 'com.android.support:design:29.0.0'
+//    implementation "com.android.support:percent:29.0.0"
+//    implementation "com.android.support:support-vector-drawable:29.0.0"
+
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    //路由
+    implementation 'com.alibaba:arouter-api:1.4.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.0'
+//    kapt 'com.alibaba:arouter-annotation:1.0.6'
+    kapt 'com.alibaba:arouter-compiler:1.2.0'
+    // RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation "io.reactivex.rxjava2:rxjava:2.2.6"
+    //图片处理
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.10.0'
+    //json解析
+    implementation 'com.alibaba:fastjson:1.2.62'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    //网络请求
+    implementation 'com.lzy.net:okgo:3.0.4'
+    //事件总线
+    implementation 'org.greenrobot:eventbus:3.1.1'
+    implementation 'com.github.chrisbanes.photoview:library:1.2.4'
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    //照片压缩
+    implementation 'id.zelory:compressor:2.1.0'
+    //facebook图片加载
+    implementation 'com.facebook.fresco:fresco:1.3.0'
+    //Picasso 异步加载图片
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    //照片压缩
+    implementation 'id.zelory:compressor:2.1.0'
+
+    //通用库
+    api project(':lib-toast')
+    //通用库
+    api project(':constant')
+}

@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zzz.myemergencyclientnew">
+
+<!--    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />-->
+<!--    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
+<!--    <uses-permission android:name="android.permission.CAMERA" />-->
+
+<!--    <uses-permission android:name="android.permission.READ_PHONE_STATE" /> &lt;!&ndash; 读电话号码&ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" /> &lt;!&ndash;拨打电话 &ndash;&gt;-->
+
+<!--    &lt;!&ndash; 必须的权限： &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.READ_PHONE_STATE" />  &lt;!&ndash; 设备信息 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.INTERNET" /> &lt;!&ndash; 网络通信&ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> &lt;!&ndash; apn信息 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> &lt;!&ndash; mac地址&ndash;&gt;-->
+
+<!--    &lt;!&ndash; 可选的权限： &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> &lt;!&ndash; 异常堆栈sdcard存储 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.READ_LOGS" /> &lt;!&ndash; 异常上报系统log &ndash;&gt;-->
+
+<!--    &lt;!&ndash; 音频需要的权限： &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.RECORD_AUDIO" />-->
+<!--    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />-->
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+
+<!--    &lt;!&ndash; 摄像头需要的权限： &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.CAMERA" />-->
+
+<!--    <uses-feature android:name="android.hardware.camera" />-->
+<!--    <uses-feature android:name="android.hardware.camera.autofocus" />-->
+
+<!--    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />-->
+<!--    <uses-permission android:name="android.permission.VIBRATE" />-->
+
+
+<!--    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />-->
+<!--    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />-->
+<!--    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />-->
+
+<!--    <uses-permission android:name="android.permission.RESTART_PACKAGES" />-->
+<!--    <uses-permission android:name="android.permission.BROADCAST_STICKY" />-->
+<!--    <uses-permission android:name="android.permission.WRITE_SETTINGS" />-->
+<!--    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />-->
+<!--    <uses-permission android:name="android.permission.WAKE_LOCK" />-->
+<!--    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />-->
+<!--    <uses-permission android:name="android.permission.GET_TASKS" />-->
+
+<!--    &lt;!&ndash; 通过GPS得到精确位置 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />-->
+<!--    &lt;!&ndash; 通过网络得到粗略位置 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />-->
+<!--    &lt;!&ndash; 访问网络. 某些位置信息需要从网络服务器获取 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.INTERNET" />-->
+<!--    &lt;!&ndash; 访问WiFi状态. 需要WiFi信息用于网络定位 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+<!--    &lt;!&ndash; 修改WiFi状态. 发起WiFi扫描, 需要WiFi信息用于网络定位 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />-->
+<!--    &lt;!&ndash; 访问网络状态, 检测网络的可用性. 需要网络运营商相关信息用于网络定位 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+<!--    &lt;!&ndash; 访问网络的变化, 需要某些信息用于网络定位 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />-->
+<!--    &lt;!&ndash; 访问手机当前状态, 需要某些信息用于网络定位 &ndash;&gt;-->
+<!--    <uses-permission android:name="android.permission.READ_PHONE_STATE" />-->
+
+<!--    <uses-permission android:name="oicq.wlogin_sdk.permission.WloginProvider.READ" />-->
+<!--    <uses-permission android:name="oicq.wlogin_sdk.permission.WloginProvider.WRITE" />-->
+<!--    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
+
+
+    <!--    程序可以读取设备外部存储空间（内置SDcard和外置SDCard）的文件，如果您的App已经添加了“WRITE_EXTERNAL_STORAGE ”权限 ，则就没必要添加读的权限了，写权限已经包含了读权限了。-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--    允许程序写入外部存储,如SD卡上写文件-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--    读取通话记录-->
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <!--    允许程序访问联系人通讯录信息-->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--    允许程序从非系统拨号器里拨打电话-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!--    允许程序在手机屏幕关闭后后台进程仍然运行-->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--    允许程序获取网络信息状态，如当前的网络连接是否有效-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--    允许程序获取当前WiFi接入的状态以及WLAN热点的信息-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--    允许程序访问网络连接，可能产生GPRS流量-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--    允许程序改变WiFi状态-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- 使用相机及自动对焦功能的权限 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--    允许程序通过WiFi或移动基站的方式获取用户错略的经纬度信息-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--    允许程序通过GPS芯片接收卫星的定位信息-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--    允许程序录制声音通过手机或耳机的麦克-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!--    允许程序修改声音设置信息-->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <!--    允许程序振动-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!--    允许访问闪光灯-->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <!--    允许程序访问账户Gmail列表-->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!--    允许程序请求验证从AccountManager-->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <!--    允许程序管理AccountManager中的账户列表-->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <!--    允许程序通过账户验证方式访问账户管理ACCOUNT_MANAGER相关信息-->
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <!--允许程序访问电话状态，监听来电-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--    允许程序收到广播后快速收到下一个广播-->
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <!--    允许程序开机自动运行-->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!--    允许程序结束任务通过restartPackage(String)方法，该方式将在外来放弃-->
+    <uses-permission android:name="android.permission.RESTART_PACKAGES" />
+    <!--    允许程序调用killBackgroundProcesses(String).方法结束后台进程-->
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
+    <!--    允许程序获取任务信息-->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!--    允许程序连接配对过的蓝牙设备-->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!--    允许程序写入日程，但不可读取-->
+    <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+    <!--    允许程序发送短信-->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!--    允许程序接收短信-->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <!--    允许程序读取短信内容-->
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <!--    允许一个应用程序添加语音邮件系统-->
+    <uses-permission android:name="android.permission.ADD_VOICEMAIL" />
+    <!--    允许程序写入（但是不能读）用户的联系人数据-->
+    <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
+    <!--    允许程序读取用户的日程信息-->
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <!--    允许程序接收WAP PUSH信息-->
+    <uses-permission android:name="android.permission.RECEIVE_WAP_PUSH" />
+    <!--    允许程序使用SIP视频服务-->
+    <uses-permission android:name="android.permission.USE_SIP" />
+    <!--    请求粗略位置信息权限-->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <!--    传感器-->
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <!--    从界面中移除了权限组 应该已经无用 版本号10的权限-->
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <!--    允许程序接收彩信-->
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <!--允许程序访问额外的定位提供者指令-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <!--允许程序监视，修改或放弃播出电话-->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <!--    允许程序显示系统窗口-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!--    允许程序改变网络状态,如是否联网-->
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!--    允许程序进行发现和配对新的蓝牙设备-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!--android 8.0 安装升级打开设置外来应用安装页面-->
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!-- 写入联系人,但不可读取 -->
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
+    <!--    老是定位你的位置，巨讨厌了。 用户的感觉，费电，被人跟踪。-->
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <!--    允许程序禁用键盘锁-->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- 使用音视频录制的权限 -->
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <!--    允许程序扩展或收缩状态栏-->
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+    <!--    申请开启悬浮窗权限-->
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <!--    创建快捷方式-->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <!--    删除快捷方式-->
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+    <!--    允许程序读取或写入系统设置-->
+    <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS" />
+    <!-- android 9.0上使用前台服务，需要添加权限 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- android 9.0上使用前台服务，需要添加权限 -->
+
+    <!--    允许当前应用改变配置，如定位-->
+    <uses-permission
+        android:name="android.permission.CHANGE_CONFIGURATION"
+        tools:ignore="ProtectedPermissions" />
+    <!--允许程序读取系统底层日志-->
+    <uses-permission
+        android:name="android.permission.READ_LOGS"
+        tools:ignore="ProtectedPermissions" />
+    <!--    电池-->
+    <uses-permission
+        android:name="android.permission.BATTERY_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <!--    允许程序挂载、反挂载外部文件系统-->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <!--    允许程序读取或写入系统设置-->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <!--    允许程序删除应用-->
+    <uses-permission
+        android:name="android.permission.DELETE_PACKAGES"
+        tools:ignore="ProtectedPermissions" />
+    <!--    允许程序访问底层电源管理-->
+    <uses-permission
+        android:name="android.permission.DEVICE_POWER"
+        tools:ignore="ProtectedPermissions" />
+    <!--    允许应用程序读取或写入安全系统设置-->
+    <uses-permission
+        android:name="android.permission.WRITE_SECURE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <!--    允许访问闪光灯,permissionGroup:  提供直接访问设备硬件的权限组-->
+    <permission
+        android:name="android.permission.FLASHLIGHT"
+        android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+        android:protectionLevel="normal" />
+
+
+    <!--不明权限-->
+    <uses-permission android:name="android.permission.RAISED_THREAD_PRIORITY" />
+    <!--    launcher系统应用的自定义权限-->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!--    用户唤醒机器的权限-->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <!--    貌似试权限拒绝-->
+    <uses-permission
+        android:name="android.permission.INTERACT_ACROSS_USERS_FULL"
+        tools:ignore="ProtectedPermissions" />
+    <!--       科达用的 htc-->
+    <uses-permission android:name="com.htc.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.htc.launcher.permission.UNINSTALL_SHORTCUT" />
+    <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="com.htc.launcher.permission.WRITE_SETTINGS" />
+    <!--    定位SDKv3.1版本之后，以下权限已不需要，请取消声明，否则将由于Android 5.0多帐户系统加强权限管理而导致应用安装失败。-->
+    <!--    <permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />-->
+    <!--
+     从设备上所支持的基于网络的定位系统来获取大概的位置坐标
+<uses-feature android:name="android.hardware.location.network" android:required="false" />
+-->
+    <!--    动态危险权限======================================================================================================-->
+    <uses-permission android:name="android.permission.READ_PHONE_NUMBERS" />
+    <!--    回答电话-->
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+    <!--    动态危险权限======================================================================================================-->
+    <!--    需要某种硬件或软件资源/功能-->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <!--    自动对焦-->
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <!--    蓝牙-->
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+    <!-- 应用程序要使用设备上的麦克风 -->
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+    <!-- 使用设备设备上的电话功能，如带有数据通信服务的的无线电话 -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <!--    触屏-->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <!--    无线网络-->
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <!--    游戏开发，指定 OpenGL ES版本， 游戏需要更强大的图形处理能力-->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:name=".host.HostApplication"
+        android:theme="@android:style/Theme.DeviceDefault"
+        tools:ignore="GoogleAppIndexingWarning">
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" />
+
+<!--        <service-->
+<!--            android:name="com.baidu.location.f"-->
+<!--            android:enabled="true"-->
+<!--            android:process=":remote" />-->
+<!--        <meta-data-->
+<!--            android:name="com.baidu.lbsapi.API_KEY"-->
+<!--            android:value="vADXzuCoGigiCOMWsGx7aRHY"></meta-data>-->
+
+
+        <activity android:name=".host.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".host.DefaultContainerActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            />
+
+        <activity android:name=".host.SingleTaskContainerActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|screenLayout|fontScale|uiMode|orientation|screenSize|smallestScreenSize|layoutDirection"
+            />
+
+
+
+        <provider
+            android:name="com.tencent.shadow.core.runtime.container.PluginContainerContentProvider"
+            android:authorities="com.tencent.shadow.contentprovider.authority"
+            android:exported="true" />
+
+        <!--=========================================== 分割线 ========================================================-->
+        <activity
+            android:name=".activity.splash.SplashActivity"
+            android:theme="@style/ThemeSplash" />
+        <activity
+            android:name=".activity.SliderActivity"
+            android:theme="@style/ThemeMain" />
+        <activity
+            android:name=".activity.plugin.PluginListActivity"
+            android:theme="@style/ThemeMain" />
+        <activity
+            android:name=".activity.home.HomeActivity"
+            android:theme="@style/ThemeMain" />
+        <activity
+            android:name="com.zzz.myemergencyclientnew.activity.WebActivity"
+            android:theme="@style/ThemeMain" />
+        <activity
+            android:name="com.zzz.myemergencyclientnew.activity.NewsListPageActivity"
+            android:theme="@style/ThemeMain" />
+        <activity
+            android:name="io.realm.examples.kotlin.KotlinExampleActivity"
+            android:theme="@style/ThemeMain" />
+        <activity
+            android:name="com.zzz.myemergencyclientnew.activity.login.LoginActivity"
+            android:theme="@style/ThemeMain" />
+        <activity
+            android:name="com.zzz.myemergencyclientnew.activity.VesselActivity"
+            android:theme="@style/ThemeMain" />
+
+        <!--=========================================== 服务分割线 ========================================================-->
+        <service android:name=".service.BaiduLocationService" />
+
+<!--        <service android:name="com.zzz.myemergencyclientnew.service.DownloadService"-->
+<!--            android:exported="false"/>-->
+<!--        <service android:name="com.zzz.myemergencyclientnew.service.SimpleJobIntentService"-->
+<!--            android:exported="false"/>-->
+<!--        <service android:name="com.zzz.myemergencyclientnew.service.YourService"-->
+<!--            android:exported="false"-->
+<!--            android:permission="android.permission.BIND_JOB_SERVICE"-->
+<!--            />-->
+
+<!--        <service-->
+<!--            android:name=".service.JobSchedulerService"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true"-->
+<!--            android:permission="android.permission.BIND_JOB_SERVICE"></service>-->
+
+<!--        <service-->
+<!--            android:name=".service.SimpleJobIntentService"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true" />-->
+
+<!--        <service-->
+<!--            android:name=".service.SimpleIntentService"-->
+<!--            android:exported="false"-->
+<!--            android:permission="android.permission.BIND_JOB_SERVICE" />-->
+
+
+        <provider
+            android:name=".provider.UpdateFileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/new_app_file_paths" />
+        </provider>
+    </application>
+
+</manifest>

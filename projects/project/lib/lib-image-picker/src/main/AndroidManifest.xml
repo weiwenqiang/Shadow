@@ -1,0 +1,21 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.zzz.myemergencyclientnew.imagepicker">
+
+    <!--    允许程序访问网络连接，可能产生GPRS流量-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--    允许程序获取网络信息状态，如当前的网络连接是否有效-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:networkSecurityConfig="@xml/network_security_config">
+        <activity
+            android:name="com.zzz.myemergencyclientnew.library.imagepicker.ImageSelectActivity"
+            android:theme="@style/ThemeMain"></activity>
+        <activity
+            android:name="com.zzz.myemergencyclientnew.library.imagepicker.ImageCropActivity"
+            android:theme="@style/ThemeMain"></activity>
+
+    </application>
+
+</manifest>

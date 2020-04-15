@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wwq="http://schemas.android.com/apk/res-auto">
+    <!--    android:background="@mipmap/login_bg_bank"-->
+
+    <data>
+        <variable
+            name="mView"
+            type="com.zzz.myemergencyclientnew.fragment.login.SignInFragment" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.zzz.myemergencyclientnew.widget.combine.ExtendEditView
+            android:id="@+id/edt_login_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/main_m_l_r"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="@dimen/main_m_l_r"
+            wwq:edt_hint="用户名"
+            wwq:edt_inputType="default"
+            wwq:edt_maxLength="20"
+            wwq:img_extend_left_normal="@mipmap/ic_login_user_normal"
+            wwq:img_extend_left_pressed="@mipmap/ic_login_user_pressed"
+            wwq:img_extend_right_normal="@mipmap/ic_login_correct_normal"
+            wwq:img_extend_right_pressed="@mipmap/ic_login_correct_pressed"
+            wwq:layout_constraintTop_toTopOf="parent" />
+
+        <com.zzz.myemergencyclientnew.widget.combine.ExtendEditView
+            android:id="@+id/edt_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/main_m_l_r"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/main_m_l_r"
+            wwq:edt_hint="密码"
+            wwq:edt_inputType="password"
+            wwq:edt_maxLength="20"
+            wwq:img_extend_left_normal="@mipmap/ic_login_chain_normal"
+            wwq:img_extend_left_pressed="@mipmap/ic_login_chain_pressed"
+            wwq:img_extend_right_normal="@mipmap/ic_login_eye_normal"
+            wwq:img_extend_right_pressed="@mipmap/ic_login_eye_pressed"
+            wwq:layout_constraintTop_toBottomOf="@+id/edt_login_phone" />
+
+        <TextView
+            android:id="@+id/txt_login_forget_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/main_m_l_r"
+            android:text="忘记密码"
+            android:onClick="@{mView::forgetPassword}"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/text_normal"
+            wwq:layout_constraintEnd_toEndOf="parent"
+            wwq:layout_constraintTop_toBottomOf="@+id/edt_login_password" />
+
+        <Button
+            android:id="@+id/btn_confirm"
+            style="@style/BtnMain"
+            android:layout_marginLeft="@dimen/main_m_l_r"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="@dimen/main_m_l_r"
+            android:enabled="true"
+            android:text="登录"
+            android:onClick="@{mView::login}"
+            wwq:layout_constraintEnd_toEndOf="parent"
+            wwq:layout_constraintStart_toStartOf="parent"
+            wwq:layout_constraintTop_toBottomOf="@+id/txt_login_forget_pass" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="还没有账户？"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_normal"
+            wwq:layout_constraintBaseline_toBaselineOf="@+id/txt_login_register"
+            wwq:layout_constraintRight_toLeftOf="@+id/txt_login_register"
+            wwq:layout_constraintTop_toBottomOf="@+id/btn_confirm" />
+
+        <TextView
+            android:id="@+id/txt_login_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="@dimen/main_m_l_r"
+            android:text="立即注册"
+            android:onClick="@{mView::register}"
+            android:textColor="@color/main_color"
+            android:textSize="@dimen/text_normal"
+            wwq:layout_constraintEnd_toEndOf="parent"
+            wwq:layout_constraintTop_toBottomOf="@+id/btn_confirm" />
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_token"-->
+<!--            style="@style/BtnMain"-->
+<!--            android:layout_marginLeft="@dimen/main_m_l_r"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginRight="@dimen/main_m_l_r"-->
+<!--            android:enabled="true"-->
+<!--            android:text="token登录"-->
+<!--            wwq:layout_constraintEnd_toEndOf="parent"-->
+<!--            wwq:layout_constraintStart_toStartOf="parent"-->
+<!--            wwq:layout_constraintTop_toBottomOf="@+id/txt_login_register" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_most_sign_in"-->
+<!--            style="@style/BtnMain"-->
+<!--            android:layout_marginLeft="@dimen/main_m_l_r"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginRight="@dimen/main_m_l_r"-->
+<!--            android:onClick="@{mView::mostSignIn}"-->
+<!--            android:enabled="true"-->
+<!--            android:text="最强登录"-->
+<!--            wwq:layout_constraintEnd_toEndOf="parent"-->
+<!--            wwq:layout_constraintStart_toStartOf="parent"-->
+<!--            wwq:layout_constraintTop_toBottomOf="@+id/btn_token" />-->
+
+<!--        <Button-->
+<!--            android:id="@+id/btn_test1"-->
+<!--            style="@style/BtnMain"-->
+<!--            android:layout_marginLeft="@dimen/main_m_l_r"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginRight="@dimen/main_m_l_r"-->
+<!--            android:onClick="@{mView::test1}"-->
+<!--            android:enabled="true"-->
+<!--            android:text="13621123057登录"-->
+<!--            wwq:layout_constraintEnd_toEndOf="parent"-->
+<!--            wwq:layout_constraintStart_toStartOf="parent"-->
+<!--            wwq:layout_constraintTop_toBottomOf="@+id/btn_most_sign_in" />-->
+<!--        <Button-->
+<!--            android:id="@+id/btn_test2"-->
+<!--            style="@style/BtnMain"-->
+<!--            android:layout_marginLeft="@dimen/main_m_l_r"-->
+<!--            android:layout_marginTop="15dp"-->
+<!--            android:layout_marginRight="@dimen/main_m_l_r"-->
+<!--            android:onClick="@{mView::test2}"-->
+<!--            android:enabled="true"-->
+<!--            android:text="13934138252登录"-->
+<!--            wwq:layout_constraintEnd_toEndOf="parent"-->
+<!--            wwq:layout_constraintStart_toStartOf="parent"-->
+<!--            wwq:layout_constraintTop_toBottomOf="@+id/btn_test1" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

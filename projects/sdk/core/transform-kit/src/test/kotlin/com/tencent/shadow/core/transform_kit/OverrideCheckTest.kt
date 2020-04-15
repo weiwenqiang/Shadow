@@ -16,11 +16,7 @@ class OverrideCheckTest : AbstractTransformTest() {
 
     @Before
     fun setUp() {
-        val buildDir = File(WRITE_FILE_DIR)
-        if (buildDir.exists()) {
-            FileUtils.cleanDirectory(buildDir)
-        }
-
+        FileUtils.cleanDirectory(File(WRITE_FILE_DIR))
         inputClasses = ClassPool(true).get(arrayOf(
                 "test.override.Bar",
                 "test.override.Foo"
